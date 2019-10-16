@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29409.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "War3Map.Template.Launcher", "War3Map.Template.Launcher\War3Map.Template.Launcher.csproj", "{7467C647-3C6F-437C-A761-7E37542F577C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "War3Map.Template.Source", "War3Map.Template.Source\War3Map.Template.Source.csproj", "{F93D82E3-B6B7-4BBD-B87D-8AD0969BFC94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7467C647-3C6F-437C-A761-7E37542F577C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7467C647-3C6F-437C-A761-7E37542F577C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7467C647-3C6F-437C-A761-7E37542F577C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7467C647-3C6F-437C-A761-7E37542F577C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F93D82E3-B6B7-4BBD-B87D-8AD0969BFC94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F93D82E3-B6B7-4BBD-B87D-8AD0969BFC94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F93D82E3-B6B7-4BBD-B87D-8AD0969BFC94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F93D82E3-B6B7-4BBD-B87D-8AD0969BFC94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13F798B6-A816-403B-92A1-31B188E801A2}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\War3Map.Template.Source\War3Map.Template.Source.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="War3Net.CSharpLua" Version="1.1.2" />
+    <PackageReference Include="War3Net.Build" Version="0.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\**" />
+    <Content Include="Assets\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
