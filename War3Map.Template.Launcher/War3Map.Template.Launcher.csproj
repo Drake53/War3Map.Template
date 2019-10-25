@@ -10,8 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="War3Net.CSharpLua" Version="1.1.2" />
-    <PackageReference Include="War3Net.Build" Version="0.1.2" />
+    <PackageReference Include="War3Net.Build" Version="0.2.1" />
+    <PackageReference Include="War3Net.CSharpLua.CoreSystem" Version="1.0.1" />
   </ItemGroup>
 
   <ItemGroup>

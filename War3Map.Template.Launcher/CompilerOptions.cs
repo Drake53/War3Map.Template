@@ -8,7 +8,7 @@ namespace War3Map.Template.Launcher
     {
         public static ScriptCompilerOptions GetCompilerOptions(MapInfo mapInfo, string sourceDirectory, string outputDirectory)
         {
-            var scriptCompilerOptions = new ScriptCompilerOptions();
+            var scriptCompilerOptions = new ScriptCompilerOptions(CSharpLua.CoreSystem.CoreSystemProvider.GetCoreSystemFiles());
 
             scriptCompilerOptions.MapInfo = mapInfo;
             scriptCompilerOptions.SourceDirectory = sourceDirectory;
