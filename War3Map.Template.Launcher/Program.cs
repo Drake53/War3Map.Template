@@ -21,16 +21,21 @@ namespace War3Map.Template.Launcher
 
         private static void Main()
         {
-            var mapInfo = Info.GetMapInfo(Path.Combine(AssetsFolderPath, MapInfo.FileName));
-            var scriptCompilerOptions = CompilerOptions.GetCompilerOptions(mapInfo, SourceCodeProjectFolderPath, OutputFolderPath);
-
             // Build and launch
             var mapBuilder = new MapBuilder(OutputMapName);
-            if (mapBuilder.Build(scriptCompilerOptions, AssetsFolderPath) && Warcraft3ExecutableFilePath != null)
+            if (mapBuilder.Build(CompilerOptions.GetCompilerOptions(SourceCodeProjectFolderPath, OutputFolderPath), AssetsFolderPath))
             {
-                var mapPath = Path.Combine(scriptCompilerOptions.OutputDirectory, OutputMapName);
+                var mapPath = Path.Combine(OutputFolderPath, OutputMapName);
                 var absoluteMapPath = new FileInfo(mapPath).FullName;
-                Process.Start(Warcraft3ExecutableFilePath, $"{Warcraft3CommandLineArgs} -loadfile \"{absoluteMapPath}\"");
+
+                if (Warcraft3ExecutableFilePath is null)
+                {
+                    Process.Start("explorer.exe", $"/select, \"{absoluteMapPath}\"");
+                }
+                else
+                {
+                    Process.Start(Warcraft3ExecutableFilePath, $"{Warcraft3CommandLineArgs} -loadfile \"{absoluteMapPath}\"");
+                }
             }
         }
     }

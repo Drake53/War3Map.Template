@@ -1,4 +1,4 @@
-﻿using War3Net.Build;
+﻿using War3Net.Build.Info;
 
 namespace War3Map.Template.Launcher
 {

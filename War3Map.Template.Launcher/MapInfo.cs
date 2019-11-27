@@ -1,23 +1,17 @@
-﻿using War3Net.Build;
-using War3Net.Build.Providers;
+﻿using War3Net.Build.Info;
 
 namespace War3Map.Template.Launcher
 {
     internal static class Info
     {
-        private const string MapName = "Just another Warcraft III map";
-        private const string MapDescription = "Nondescript";
-        private const string MapAuthor = "Unknown";
-        private const string RecommendedPlayers = "Any";
-
-        public static MapInfo GetMapInfo(string infoFile)
+        public static MapInfo GetMapInfo()
         {
-            var mapInfo = MapInfo.Parse(FileProvider.GetFile(infoFile));
+            var mapInfo = MapInfo.Default;
 
-            mapInfo.MapName = MapName;
-            mapInfo.MapDescription = MapDescription;
-            mapInfo.MapAuthor = MapAuthor;
-            mapInfo.RecommendedPlayers = RecommendedPlayers;
+            mapInfo.MapName = "Just another Warcraft III map";
+            mapInfo.MapDescription = "Nondescript";
+            mapInfo.MapAuthor = "Unknown";
+            mapInfo.RecommendedPlayers = "Any";
 
             mapInfo.MapFlags &= ~MapFlags.MeleeMap;
             mapInfo.ScriptLanguage = ScriptLanguage.Lua;
