@@ -11,7 +11,7 @@ namespace War3Map.Template.Launcher
             var scriptCompilerOptions = new ScriptCompilerOptions(CSharpLua.CoreSystem.CoreSystemProvider.GetCoreSystemFiles());
 
             scriptCompilerOptions.MapInfo = Info.GetMapInfo();
-            scriptCompilerOptions.MapEnvironment = new MapEnvironment(War3Net.Build.Common.Tileset.LordaeronSummer, 65, 65);
+            scriptCompilerOptions.MapEnvironment = new MapEnvironment(War3Net.Build.Common.Tileset.LordaeronSummer, scriptCompilerOptions.MapInfo);
 
             scriptCompilerOptions.SourceDirectory = sourceDirectory;
             scriptCompilerOptions.OutputDirectory = outputDirectory;
