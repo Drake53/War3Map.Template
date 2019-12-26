@@ -28,13 +28,15 @@ namespace War3Map.Template.Launcher
                 var mapPath = Path.Combine(OutputFolderPath, OutputMapName);
                 var absoluteMapPath = new FileInfo(mapPath).FullName;
 
-                if (Warcraft3ExecutableFilePath is null)
-                {
-                    Process.Start("explorer.exe", $"/select, \"{absoluteMapPath}\"");
-                }
-                else
+#if DEBUG
+                if (Warcraft3ExecutableFilePath != null)
                 {
                     Process.Start(Warcraft3ExecutableFilePath, $"{Warcraft3CommandLineArgs} -loadfile \"{absoluteMapPath}\"");
+                }
+                else
+#endif
+                {
+                    Process.Start("explorer.exe", $"/select, \"{absoluteMapPath}\"");
                 }
             }
         }
