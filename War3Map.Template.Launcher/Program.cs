@@ -1,5 +1,7 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.IO;
+using System.Text;
 
 using War3Net.Build;
 
@@ -17,13 +19,16 @@ namespace War3Map.Template.Launcher
 
         // Warcraft III
         private const string Warcraft3ExecutableFilePath = null;
-        private const string Warcraft3CommandLineArgs = @"-nowfpause -graphicsapi Direct3D9 ";
+        private const string GraphicsApi = "Direct3D9";
+        private const bool PauseGameOnLoseFocus = false;
 
         private static void Main()
         {
             // Build and launch
             var mapBuilder = new MapBuilder(OutputMapName);
-            if (mapBuilder.Build(CompilerOptions.GetCompilerOptions(SourceCodeProjectFolderPath, OutputFolderPath), AssetsFolderPath))
+            var options = CompilerOptions.GetCompilerOptions(SourceCodeProjectFolderPath, OutputFolderPath);
+
+            if (mapBuilder.Build(options, AssetsFolderPath))
             {
                 var mapPath = Path.Combine(OutputFolderPath, OutputMapName);
                 var absoluteMapPath = new FileInfo(mapPath).FullName;
@@ -31,7 +36,25 @@ namespace War3Map.Template.Launcher
 #if DEBUG
                 if (Warcraft3ExecutableFilePath != null)
                 {
-                    Process.Start(Warcraft3ExecutableFilePath, $"{Warcraft3CommandLineArgs} -loadfile \"{absoluteMapPath}\"");
+                    var commandLineArgs = new StringBuilder();
+                    var isReforged = Version.Parse(FileVersionInfo.GetVersionInfo(Warcraft3ExecutableFilePath).FileVersion) >= new Version(1, 32);
+                    if (isReforged)
+                    {
+                        commandLineArgs.Append("-launch ");
+                    }
+                    else if (GraphicsApi != null)
+                    {
+                        commandLineArgs.Append($"-graphicsapi {GraphicsApi} ");
+                    }
+
+                    if (!PauseGameOnLoseFocus)
+                    {
+                        commandLineArgs.Append("-nowfpause ");
+                    }
+
+                    commandLineArgs.Append($"-loadfile \"{absoluteMapPath}\"");
+
+                    Process.Start(Warcraft3ExecutableFilePath, commandLineArgs.ToString());
                 }
                 else
 #endif
