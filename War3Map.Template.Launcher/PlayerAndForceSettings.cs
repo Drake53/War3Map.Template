@@ -7,36 +7,32 @@ namespace War3Map.Template.Launcher
         public static void ApplyToMapInfo(MapInfo mapInfo)
         {
             // Create players
-            var player0 = new PlayerData()
-            {
-                PlayerNumber = 0,
-                PlayerName = "Player 1",
-                PlayerController = PlayerController.User,
-                PlayerRace = PlayerRace.Human,
-                IsRaceSelectable = true,
-                StartPosition = new System.Drawing.PointF(0f, 0f),
-                FixedStartPosition = true,
-            };
-            var player1 = new PlayerData()
-            {
-                PlayerNumber = 1,
-                PlayerName = "Player 2",
-                PlayerController = PlayerController.User,
-                PlayerRace = PlayerRace.Human,
-                IsRaceSelectable = true,
-                StartPosition = new System.Drawing.PointF(0f, 0f),
-                FixedStartPosition = true,
-            };
-            var player2 = new PlayerData()
-            {
-                PlayerNumber = 23,
-                PlayerName = "Enemies",
-                PlayerController = PlayerController.Computer,
-                PlayerRace = PlayerRace.Orc,
-                IsRaceSelectable = false,
-                StartPosition = new System.Drawing.PointF(0f, 0f),
-                FixedStartPosition = true,
-            };
+            var player0 = PlayerData.Create();
+            player0.PlayerNumber = 0;
+            player0.PlayerName = "Player 1";
+            player0.PlayerController = PlayerController.User;
+            player0.PlayerRace = PlayerRace.Human;
+            player0.IsRaceSelectable = true;
+            player0.StartPosition = new System.Drawing.PointF( 0f, 0f );
+            player0.FixedStartPosition = true;
+
+            var player1 = PlayerData.Create();
+            player1.PlayerNumber = 1;
+            player1.PlayerName = "Player 2";
+            player1.PlayerController = PlayerController.User;
+            player1.PlayerRace = PlayerRace.Human;
+            player1.IsRaceSelectable = true;
+            player1.StartPosition = new System.Drawing.PointF( 0f, 0f );
+            player1.FixedStartPosition = true;
+
+            var player2 = PlayerData.Create();
+            player2.PlayerNumber = 23;
+            player2.PlayerName = "Enemies";
+            player2.PlayerController = PlayerController.Computer;
+            player2.PlayerRace = PlayerRace.Orc;
+            player2.IsRaceSelectable = false;
+            player2.StartPosition = new System.Drawing.PointF( 0f, 0f );
+            player2.FixedStartPosition = true;
 
             // Add players to MapInfo
             mapInfo.SetPlayerData(player0, player1, player2);
