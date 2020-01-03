@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <PackageReference Include="War3Net.Build" Version="1.0.0-preview6" />
+    <PackageReference Include="War3Net.CSharpLua" Version="1.5.5" />
     <PackageReference Include="War3Net.CSharpLua.CoreSystem" Version="1.1.1" />
   </ItemGroup>
 
