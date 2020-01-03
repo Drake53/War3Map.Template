@@ -7,26 +7,21 @@ namespace War3Map.Template.Launcher
         public static void ApplyToMapInfo(MapInfo mapInfo)
         {
             // Create players
-            var player0 = PlayerData.Create();
-            player0.PlayerNumber = 0;
-            player0.PlayerName = "Player 1";
+            var player0 = PlayerData.Create(0);
             player0.PlayerController = PlayerController.User;
             player0.PlayerRace = PlayerRace.Human;
             player0.IsRaceSelectable = true;
             player0.StartPosition = new System.Drawing.PointF( 0f, 0f );
             player0.FixedStartPosition = true;
 
-            var player1 = PlayerData.Create();
-            player1.PlayerNumber = 1;
-            player1.PlayerName = "Player 2";
+            var player1 = PlayerData.Create(1);
             player1.PlayerController = PlayerController.User;
             player1.PlayerRace = PlayerRace.Human;
             player1.IsRaceSelectable = true;
             player1.StartPosition = new System.Drawing.PointF( 0f, 0f );
             player1.FixedStartPosition = true;
 
-            var player2 = PlayerData.Create();
-            player2.PlayerNumber = 23;
+            var player2 = PlayerData.Create(23);
             player2.PlayerName = "Enemies";
             player2.PlayerController = PlayerController.Computer;
             player2.PlayerRace = PlayerRace.Orc;
