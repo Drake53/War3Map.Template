@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 using War3Net.Build;
@@ -28,7 +29,8 @@ namespace War3Map.Template.Launcher
             var mapBuilder = new MapBuilder(OutputMapName);
             var options = CompilerOptions.GetCompilerOptions(SourceCodeProjectFolderPath, OutputFolderPath);
 
-            if (mapBuilder.Build(options, AssetsFolderPath))
+            var buildResult = mapBuilder.Build(options, AssetsFolderPath);
+            if (buildResult.Success)
             {
                 var mapPath = Path.Combine(OutputFolderPath, OutputMapName);
                 var absoluteMapPath = new FileInfo(mapPath).FullName;
@@ -61,6 +63,10 @@ namespace War3Map.Template.Launcher
                 {
                     Process.Start("explorer.exe", $"/select, \"{absoluteMapPath}\"");
                 }
+            }
+            else
+            {
+                throw new Exception(buildResult.Diagnostics.Where(diagnostic => diagnostic.Severity == Microsoft.CodeAnalysis.DiagnosticSeverity.Error).First().GetMessage());
             }
         }
     }
