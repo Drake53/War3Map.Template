@@ -10,9 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="War3Net.Build" Version="1.0.0-rc1" />
-    <PackageReference Include="War3Net.CSharpLua" Version="1.5.8" />
-    <PackageReference Include="War3Net.CSharpLua.CoreSystem" Version="1.2.0" />
+    <PackageReference Include="War3Net.Build" Version="1.1.2" />
+    <PackageReference Include="War3Net.CSharpLua.CoreSystem" Version="1.2.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,10 +19,6 @@
     <Content Include="Assets\**">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Assets\" />
   </ItemGroup>
 
 </Project>
