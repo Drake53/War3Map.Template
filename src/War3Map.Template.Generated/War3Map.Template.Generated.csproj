@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="War3Api.Common" Version="1.31.1.4" />
+    <PackageReference Include="War3Api.Common.Legacy" Version="1.31.1.5" />
   </ItemGroup>
 
 </Project>
