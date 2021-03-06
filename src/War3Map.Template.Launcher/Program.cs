@@ -26,7 +26,7 @@ namespace War3Map.Template.Launcher
         private static void Main()
         {
             // Build and launch
-            var mapBuilder = new MapBuilder(OutputMapName);
+            var mapBuilder = new LegacyMapBuilder(OutputMapName);
             var options = CompilerOptions.GetCompilerOptions(SourceCodeProjectFolderPath, OutputFolderPath);
 
             var buildResult = mapBuilder.Build(options, AssetsFolderPath);
