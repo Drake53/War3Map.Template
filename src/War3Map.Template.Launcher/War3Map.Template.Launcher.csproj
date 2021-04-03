@@ -8,10 +8,11 @@
   <ItemGroup>
     <ProjectReference Include="..\War3Map.Template.Common\War3Map.Template.Common.csproj" />
   </ItemGroup>
-
+  
   <ItemGroup>
     <PackageReference Include="War3Net.Build" Version="5.0.0" />
-    <PackageReference Include="War3Net.CSharpLua.CoreSystem" Version="1.7.8" />
+    <PackageReference Include="War3Net.CSharpLua" Version="1.7.11" />
+    <PackageReference Include="War3Net.CSharpLua.CoreSystem" Version="1.7.11" />
   </ItemGroup>
 
   <ItemGroup>
